@@ -1,19 +1,36 @@
 @use "_mixins";
 
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 
 
-html {
-    margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
+html,
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
 }
 
 a {
     text-decoration: none;
     color: black;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 16px;
 }
 
 ::placeholder {
@@ -23,12 +40,12 @@ a {
 
 .globalwrapper {
     max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
+    max-height: 100%;
+    background-color: white
 }
 
 .header {
-    @include mixins.flex-center(row);
+    @include mixins.flex (row);
 
     &__logo {
         font-family: "Shrikhand", "cursive";
@@ -37,7 +54,7 @@ a {
 }
 
 .place {
-    @include mixins.flex-center(row);
+    @include mixins.flex (row);
     @include mixins.centrer;
     background-color: lightgray;
     padding: 15px;
@@ -51,33 +68,140 @@ a {
     &__txt {
         border: none;
         font-weight: 700;
+        color: #fff
     }
 
 }
 
 .explore {
-    @include mixins.flex-center(column);
+    @include mixins.flex (column);
     @include mixins.centrer;
     background-color: #F2F2F2;
     padding-bottom: 30px;
 
     &__btn {
-        @include mixins.bouton
+        @include mixins.bouton;
+        color: #fff;
     }
 }
 
-.fct__list {
-    @include mixins.flex-center(column);
-    gap: 25px;
-    background-color: #F2F2F2;
-    
+.fct {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+
+    &__list {
+        @include mixins.flex (column);
+        gap: 15px;
+        margin: 0;
+        padding: 0;
+
+
+    }
 
     &__listElt {
         display: flex;
-        gap: 15px;
+        background-color: #F2F2F2;
+        border-radius: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
     }
+
     &__icon {
-        padding : 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+
     }
-    
+
+    &__txt {
+        font-weight: 600;
+    }
+}
+
+.resto {
+    background-color: #F2F2F2;
+    padding-left: 15px;
+    padding-bottom: 30px;
+
+    &__title {
+        padding-top: 15px;
+    }
+}
+
+.card {
+    @include mixins.flex (column);
+    row-gap: 10px;
+
+
+    &__item {
+        position: relative;
+        background-color: white;
+        width: 100%;
+        height: 250px;
+        border-radius: 15px;
+
+    }
+
+    &__image {
+        height: 150px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 15px 15px 0 0;
+    }
+
+    &__badge {
+        position: absolute;
+        background-color: #99E2D0;
+        top: 20px;
+        right: 20px;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        justify-content: space-between
+    }
+
+    &__btn {
+        @include mixins.bouton;
+        background-color: #fff;
+    }
+}
+
+.footer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+
+    &__logo {
+        color: white;
+        font-family: "Shrikhand", "cursive";
+        margin: 0;
+        font-size: 1.2rem;
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__link {
+        color: white;
+        text-decoration: none;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+
 }
