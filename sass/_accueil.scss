@@ -1,0 +1,253 @@
+@use '_mixins.scss';
+@use '_base.scss';
+@use '_animations.scss';
+
+.loader-container {
+    background: #000;
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    animation: loadingscreen;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+
+    
+}
+  .loader {
+    position: relative;
+    width:250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top-color: #99E2D0;
+    animation: spin 2s linear infinite;
+    
+   
+  }
+  .loader::before , .loader::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 10px solid transparent;
+
+  }
+  .loader::before {
+    top:10px;
+    left:10px;
+    right:10px;
+    bottom:10px;
+    border-top-color: rgb(255, 121, 218);
+    animation: spin 2.5s linear infinite;
+    
+
+  }
+    .loader::after {
+    top:25px;
+    left:25px;
+    right:25px;
+    bottom:25px;
+    border-top-color: #9355dc;
+    animation: spin 1.5s linear infinite;
+    
+    
+  }
+
+.header {
+    @include mixins.flex;
+
+    &__logo {
+        font-family: "Shrikhand", "cursive";
+        text-align: center;
+    }
+}
+
+.place {
+    @include mixins.flex;
+
+    @include mixins.centrer;
+    background-color: lightgray;
+    padding: 15px;
+
+
+    &__icon {
+        padding-right: 15px;
+    }
+
+    &__txt {
+        font-weight: 500;
+    }
+
+}
+
+.explore {
+    @include mixins.flex;
+    flex-direction: column;
+    @include mixins.centrer;
+    background-color: #F2F2F2;
+    padding-bottom: 30px;
+
+    &__btn {
+        @include mixins.bouton;
+        color: #fff;
+        position: relative;
+        z-index: 1;
+
+    }
+}
+
+
+
+.fct {
+    @include mixins.container;
+
+    &__list {
+        @include mixins.flex;
+        flex-direction: column;
+        gap: 15px;
+        position: relative;
+
+    }
+
+    &__listElt {
+        display: flex;
+        align-items: center;
+        background-color: #F2F2F2;
+        border-radius: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #fff;
+        }
+    }
+
+    &__number {
+        display: flex;
+        background-color: #9355dc;
+        color: white;
+        border-radius: 80px;
+        padding: 10px;
+        height: 30px;
+        align-items: center;
+        margin-left: -10px;
+    }
+
+    &__icon {
+        padding-left: 30px;
+        padding-right: 15px;
+
+    }
+
+    &__txt {
+        font-weight: 500;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .fct {
+
+        @include mixins.container;
+
+        &__list {
+            @include mixins.flex;
+            flex-direction: row;
+            gap: 30px;
+
+        }
+
+        &__listElt {
+            display: flex;
+            flex: 1;
+            background-color: #F2F2F2;
+            border-radius: 15px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-right: 30px;
+        }
+    }
+
+
+}
+
+
+
+
+.resto {
+    @include mixins.container;
+    background-color: #F2F2F2;
+
+    &__title {
+        padding-top: 15px;
+    }
+}
+
+.card {
+    @include mixins.flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+
+    &__item {
+        position: relative;
+        background-color: white;
+        width: 100%;
+        height: 220px;
+        border-radius: 15px;
+
+    }
+
+    &__image {
+        height: 150px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 15px 15px 0 0;
+    }
+
+    &__badge {
+        position: absolute;
+        background-color: #99E2D0;
+        top: 20px;
+        right: 20px;
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        justify-content: space-between;
+    }
+
+    &__subtitle {
+        font-size: 12px;
+    }
+
+    &__btn {
+        @include mixins.coeur;
+    }
+}
+
+
+
+@media screen and (min-width:992px) {
+    .card {
+        @include mixins.flex;
+        flex-flow: wrap;
+        justify-content: space-between;
+
+        gap: 50px;
+
+        &__item {
+            position: relative;
+            background-color: white;
+            width: 47%;
+            height: 220px;
+            border-radius: 15px;
+
+        }
+    }
+}

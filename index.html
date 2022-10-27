@@ -15,7 +15,11 @@
 </head>
 
 <body>
+  <div class="loader-container">
+    <div class="loader"></div>
+  </div>
   <div class="globalwrapper">
+   
     <header>
       <h1 class="header__logo">ohmyfood</h1>
     </header>
@@ -24,38 +28,41 @@
 
       <div class="place">
         <i class="fa-solid fa-location-dot place__icon"></i>
-        <input type="place__txt" placeholder="Où cherchez-vous?">
+        <span class="place__txt">Où cherchez-vous?</span>
       </div>
 
 
       <div class="explore">
         <h2 class="explore__title">Réservez le menu qui vous convient</h2>
         <p class="explore__subtitle">Découvrez des restaurants d'exception sélectionnées par nos soins</p>
-        <a class="explore__btn">Explorer nos restaurants</a>
+        <a class="explore__btn" href="#">Explorer nos restaurants</a>
       </div>
 
       <div class="fct">
         <h2 class="fct__title">Fonctionnement</h2>
-        <ol class="fct__list">
-          <li class="fct__listElt">
+        <div class="fct__list">
+          <a class="fct__listElt" href="#">
+            <div class="fct__number">1</div>
             <i class="fa-solid fa-mobile-screen fct__icon"></i>
             <span class="fct__txt">Choisissez un restaurant</span>
-          </li>
-          <li class="fct__listElt">
+          </a>
+          <a class="fct__listElt" href="#">
+            <div class="fct__number">2</div>
             <i class="fa-solid fa-list fct__icon"></i>
             <span class="fct__txt">Composez votre menu</span>
-          </li>
-          <li class="fct__listElt">
-            <i class="fa-solid fa-store fct__icon"></i>
+          </a>
+          <a class="fct__listElt" href="#">
+            <div class="fct__number">3</div>
+           <i class="fa-solid fa-store fct__icon"></i>
             <span class="fct__txt">Dégustez au restaurant</span>
-          </li>
-        </ol>
+          </a>
+        </div>
       </div>
 
       <div class="resto">
         <h2 class="resto__title">Restaurants</h2>
         <div class="card">
-          <a class="card__item" href="/pageshtml/la-palette-du-gout.html">
+          <a class="card__item" href="./la-palette-du-gout.html">
             <img src="./assets/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" class="card__image"
               alt="La palette du goût">
             <span class="card__badge">Nouveau</span>
@@ -65,11 +72,14 @@
                 <span class="card__subtitle">Ménilmontant</span>
               </div>
               <div class="card__btn">
-                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-heart card__btn--empty"></i>
+                <i class="fa-solid fa-heart card__btn--full"></i>
+              
               </div>
             </div>
           </a>
-          <a class="card__item" href="/pageshtml/#.html">
+
+          <a class="card__item" href="./la-note-enchantee.html">
             <img src="./assets/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" class="card__image" alt="La note enchantée">
             <span class="card__badge">Nouveau</span>
             <div class="card__footer">
@@ -78,11 +88,13 @@
                 <span class="card__subtitle">Charonne</span>
               </div>
               <div class="card__btn">
-                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-heart card__btn--empty"></i>
+                <i class="fa-solid fa-heart card__btn--full"></i>
               </div>
             </div>
           </a>
-          <a class="card__item" href="/pageshtml/#.html">
+
+          <a class="card__item" href="./a-la-francaise.html">
             <img src="./assets/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" class="card__image"
               alt="A la française">
             <div class="card__footer">
@@ -91,11 +103,13 @@
                 <span class="card__subtitle">Cité rouge</span>
               </div>
               <div class="card__btn">
-                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-heart card__btn--empty"></i>
+                <i class="fa-solid fa-heart card__btn--full"></i>            
               </div>
             </div>
           </a>
-          <a class="card__item" href="/#.html">
+
+          <a class="card__item" href="./le-delice-des-sens.html">
             <img src="./assets/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" class="card__image"
               alt="La palette du goût">
             <div class="card__footer">
@@ -104,37 +118,37 @@
                 <span class="card__subtitle">Folie-Méricourt</span>
               </div>
               <div class="card__btn">
-                <i class="fa-regular fa-heart card__btn card__btn-color"></i>
+                <i class="fa-regular fa-heart card__btn--empty"></i>
+                <i class="fa-solid fa-heart card__btn--full"></i>
+                
               </div>
             </div>
           </a>
-        </div>
-
 
     </main>
     <footer>
       <div class="footer">
         <span class="footer__logo">Ohmyfood</span>
-        <ul class="footer__list">
-          <li class="footer__listElt">
+        <div class="footer__list">
+          <div class="footer__listElt">
             <a class="footer__link" href="#">
               <i class="fa-solid fa-utensils footer__icon"></i>
-              <span class="footer__txt">Proposer un restaurant></span>
+              <span class="footer__txt">Proposer un restaurant</span>
             </a>
-          </li>
-          <li class="footer__listElt">
+          </div>
+          <div class="footer__listElt">
             <a class="footer__link" href="#">
               <i class="fa-solid fa-handshake-angle footer__icon"></i>
-              <span class="footer__txt">Devenir partenaire></span>
+              <span class="footer__txt">Devenir partenaire</span>
             </a>
-          </li>
-          <li class="footer__listElt">
+          </div>
+          <div class="footer__listElt">
             <a class="footer__link" href="#">Mentions légales</a>
-          </li>
-          <li class="footer__listElt">
+          </div>
+          <div class="footer__listElt">
             <a class="footer__link" href="mailto:agathezepoeur@gmail.com">Contact</a>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </footer>
 

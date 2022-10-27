@@ -1,0 +1,81 @@
+@use '_mixins.scss';
+@use '_animations.scss';
+
+$color-primary:rgb(147, 86, 220);
+$color-secondary: rgb(255, 121, 218);
+$color-tertiary: rgb(153, 226, 208);
+$color-mix: linear-gradient(rgb(255, 121, 218), rgb(147, 86, 220));
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Roboto";
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.globalwrapper {
+    max-width: 1440px;
+    max-height: 100%;
+    background-color: white;
+}
+
+.footer {
+    @include mixins.flex;
+    flex-direction: column;
+    background-color: black;
+    padding: 15px;
+    margin: 0;
+
+
+    &__logo {
+        color: white;
+        font-family: "Shrikhand", "cursive";
+        font-size: 18px;
+        padding-bottom: 15px;
+    }
+
+    &__listElt {
+        display: flex;
+        padding-bottom: 5px;
+
+    }
+
+    &__icon {
+        width: 30px;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__link {
+        color: white;
+        text-decoration: none;
+    }
+}
