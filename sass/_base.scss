@@ -18,18 +18,19 @@ body {
     margin: 0 auto;
     padding: 0;
     position: relative;
-    height: 100%;
     max-width: 1440px;
+    height: 100%;
     background-color: #fff;
 }
 
 a {
     text-decoration: none;
     color: black;
-    
+
 }
-h1{
-    color:#000;
+
+h1 {
+    color: #000;
 }
 
 h2 {
@@ -50,6 +51,7 @@ h3 {
 
 .footer {
     @include mixins.flex;
+
     flex-direction: column;
     background-color: black;
     padding: 15px;
@@ -86,19 +88,34 @@ h3 {
         text-decoration: none;
     }
 }
-@media screen and (min-width:992px){
-    .footer{
-        
-     &__logo{
-        padding-top: 50px;
-        animation: name duration timing-function delay iteration-count direction fill-mode;
-     } 
-     &__list {
-        display: flex;
-        flex-direction: row;
-        padding-bottom: 5px;
-        justify-content: space-between;
 
+@media screen and (min-width:768px) and (max-width:992px) {
+    .footer {
+        &__list {
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 5px;
+            justify-content: space-around;
+            
+        }
     }
+}
+
+@media screen and (min-width:992px) {
+    .footer {
+
+        &__logo {
+            padding-top: 50px;
+
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 5px;
+            justify-content: space-between;
+            width: 85%;
+
+        }
     }
 }
