@@ -6,6 +6,7 @@ $color-secondary: rgb(255, 121, 218);
 $color-tertiary: rgb(153, 226, 208);
 $color-mix: linear-gradient(rgb(255, 121, 218), rgb(147, 86, 220));
 
+
 * {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -14,16 +15,21 @@ $color-mix: linear-gradient(rgb(255, 121, 218), rgb(147, 86, 220));
 html,
 body {
     font-family: "Roboto";
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     position: relative;
     height: 100%;
+    max-width: 1440px;
+    background-color: #fff;
 }
 
 a {
     text-decoration: none;
-    color: #000;
-
+    color: black;
+    
+}
+h1{
+    color:#000;
 }
 
 h2 {
@@ -32,6 +38,7 @@ h2 {
 
 h3 {
     font-size: 16px;
+    margin-top: 10px;
     margin-bottom: 0;
 }
 
@@ -77,5 +84,21 @@ h3 {
     &__link {
         color: white;
         text-decoration: none;
+    }
+}
+@media screen and (min-width:992px){
+    .footer{
+        
+     &__logo{
+        padding-top: 50px;
+        animation: name duration timing-function delay iteration-count direction fill-mode;
+     } 
+     &__list {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 5px;
+        justify-content: space-between;
+
+    }
     }
 }

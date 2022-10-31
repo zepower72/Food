@@ -2,6 +2,7 @@
 @use '_base.scss';
 @use '_animations.scss';
 
+
 .loader-container {
     background: #000;
     width:100%;
@@ -220,6 +221,7 @@
         align-items: center;
         padding-left: 15px;
         justify-content: space-between;
+        margin-top: 10px;
     }
 
     &__subtitle {

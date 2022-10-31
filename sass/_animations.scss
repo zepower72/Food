@@ -25,7 +25,19 @@
     
       100%{
         opacity: 0;
-        z-index: -10;
+        z-index: -100;
+        width:0;
+        height: 0;
         
       }   
+}
+@keyframes transition {
+  0% {
+    margin-bottom: 30px;
+    opacity: 0;
+  }
+  100% {
+    margin-bottom: 0;
+    opacity: 1;
+  }
 }

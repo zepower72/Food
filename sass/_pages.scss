@@ -1,6 +1,8 @@
 @use '_mixins.scss';
 @use '_base.scss';
 
+
+
 .headermenu {
     display: flex;
     align-items: center;
@@ -17,8 +19,8 @@
     &__logo {
         justify-content: center;
     }
-
 }
+
 
 .hero {
     height: 200px;
@@ -49,6 +51,18 @@
     margin-top: -25px;
 }
 
+@media screen and (min-width:992px) {
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: -50px;
+        margin-bottom: -50px;
+        border-bottom-left-radius: 35px;
+        border-bottom-right-radius: 35px;
+        padding-bottom: 50px;
+    }
+}
+
 .menu {
     display: flex;
     align-items: center;
@@ -57,7 +71,7 @@
     &__title {
         font-family: Shrikhand, "cursive";
         text-align: center;
-        font-size: 20px;
+        font-size: 24px;
     }
 
     &__btn {
@@ -78,16 +92,16 @@
 
     &__title {
         font-variant-caps: all-small-caps;
-        margin-bottom: 45px;
+        margin-bottom: 35px;
 
         &:after {
             content: "";
-            width: 6%;
+            width: 35px;
             height: 5px;
             background-color: rgb(153, 226, 208);
             position: absolute;
             left: 0%;
-            bottom: 85%;
+            top: 45px;
 
         }
     }
@@ -96,68 +110,121 @@
         display: flex;
         flex-direction: column;
         gap: 15px;
-    }
-
-    &__listElt {
-        display: flex;
-        position: relative;
-        align-items: center;
-        padding-left: 10px;
-        justify-content: space-between;
-        background-color: #fff;
-        border-radius: 15px;
-        box-shadow: 2px 2px 10px rgb(0 0 0 / 10%);
-        overflow: hidden;
-    }
-
-    &__Eltsubtitle {
-        font-size: 12px;
-
-    }
-
-    &__Eltprix {
-        position: absolute;
-        bottom: 15px;
-        right: 15px;
-        font-weight: 600;
-    }
-
-    &__Eltcheck {
-        display: flex;
-        background-color: rgb(153, 226, 208);
-        width: 60px;
-        height:60px;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-size: 26px;
-        overflow: hidden;
-        border-bottom-right-radius: 15px;
-        border-top-right-radius: 15px;
-        cursor: pointer;
-        position: relative;
-        opacity:0;
-        
-
+        flex: 1;
     }
 }
 
 
+
 @media screen and (min-width:992px) {
+    .menubody__list {
+        gap: 30px;
+    }
+}
+
+
+.menu-content {
+    display: flex;
+    position: relative;
+    padding-left: 10px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgb(0 0 0 / 10%);
+    cursor: pointer;
+    opacity: 0;
+    animation: transition 1.5s ease-out 0.8s forwards;
+
+    &:hover {
+        .menu-content__Eltselect {
+            flex: 2;
+            opacity: 1;
+            width:60px;
+
+        }
+    }
+
+    &:hover {
+        .menu-content__Elticon {
+            transition-property: all 1s;
+            transform: rotate(360deg);
+        }
+    }
+
+
+    &__listElt {
+        display: flex;
+        max-width: 98%;
+        flex: 10;
+        flex-direction: column;
+        overflow: hidden;
+        white-space: nowrap;}
+
+
+        &__Elttext {
+            display: flex;
+            flex-direction: column;
+            height: 60px;}
+
+            &__Eltsubtitre{
+                display: flex;
+                justify-content: space-between;}
+
+
+                &__Eltsubtitle {
+                    font-size: 14px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                   
+                }
+
+                &__Eltprix {
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+      
+        &__Eltselect {
+            display: flex;
+            flex: 0;
+            height: 60px;
+            width: 60px;
+            background-color: rgb(153, 226, 208);
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 26px;
+            overflow: hidden;
+            border-bottom-right-radius: 15px;
+            border-top-right-radius: 15px;
+            cursor: pointer;
+            position: relative;
+            opacity: 0;
+            transition: all 0.6s ease-in-out;
+            transform: rotate(0);}
+
+            &__Elticon {
+                transform: rotate(90deg);
+                transition: transform 0.7s ease-in-out;
+            }
+        }
+    @media screen and (min-width:992px) {
     .menuwrapper {
         flex-direction: row;
         justify-content: space-between;
         column-gap: 50px;
     }
 }
-
-.menubody__Btn {
+.menuBtn {
     @include mixins.bouton;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
-    width: 25%;
+    margin-top: 50px;
     display: flex;
     color: #fff;
+}
 
+@media screen and (min-width:992px) {
+    .menuBtn {
+        width: 20%;
+        margin-bottom: 50px;
+    }
 }
