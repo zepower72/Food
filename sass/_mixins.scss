@@ -1,12 +1,12 @@
-@mixin  flex {
-    display : flex ;
-    margin : 0  auto ;
+@mixin flex {
+    display: flex;
+    margin: 0 auto;
 }
 
-@mixin centrer  {
-    text-align : center ;
-    align-items : center ;
-    justify-content : center ;
+@mixin centrer {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -16,23 +16,27 @@
     padding-bottom: 30px;
 
 }
-@mixin  bouton {
-    border-radius : 30px ;
-    padding : 10px 20px ;
-    font-weight : 500 ;
-    font-size : 16px ;
-    cursor:pointer ;
-    background: linear-gradient(rgb(255,121,218),rgb(147,86,220));
+
+@mixin bouton {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    background: linear-gradient(rgb(255, 121, 218), rgb(147, 86, 220));
     text-align: center;
     justify-content: center;
     box-shadow: 0 5px 0px rgba(177, 176, 176, 0.75);
+
     &:hover {
         background-color: #000;
         box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.50);
-        background: linear-gradient(rgb(246, 155, 221),rgb(168, 118, 228));}
-        transition: 0.2s ease-in-out;
-        filter: brightness(1.1);
+        background: linear-gradient(rgb(246, 155, 221), rgb(168, 118, 228));
     }
+
+    transition: 0.2s ease-in-out;
+    filter: brightness(1.1);
+}
 
 @mixin coeur {
     font-size: 25px;
@@ -53,8 +57,3 @@
         }
     }
 }
-
-
-
-
-    
