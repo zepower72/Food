@@ -73,6 +73,7 @@
 
     &__btn {
         @include mixins.coeur;
+        cursor: pointer;
     }
 }
 

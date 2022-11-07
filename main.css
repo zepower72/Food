@@ -281,7 +281,7 @@ h3 {
 }
 .fct__listElt:hover {
   cursor: pointer;
-  background-color: #fff;
+  background-color: #f9e0f2;
 }
 .fct__number {
   display: flex;
@@ -493,6 +493,7 @@ h3 {
 }
 .menu__btn {
   font-size: 25px;
+  cursor: pointer;
 }
 .menu__btn--full {
   position: relative;
