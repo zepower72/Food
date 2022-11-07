@@ -1,5 +1,5 @@
 @use '_mixins.scss';
-@use '_base.scss';
+@use '_base.scss' as b;
 
 
 
@@ -42,7 +42,7 @@
 
 .container {
     @include mixins.container;
-    background-color: #F2F2F2;
+    background-color: b.$color-bglight;
     padding-top: 25px;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
@@ -66,7 +66,7 @@
     justify-content: space-between;
 
     &__title {
-        font-family: Shrikhand, "cursive";
+        font-family: b.$font-head;
         text-align: center;
         font-size: 24px;
     }
@@ -78,14 +78,12 @@
 }
 
 .menuwrapper {
-    display: flex;
-    flex-direction: column;
+    @include mixins.flex(column);
 
 }
 @media screen and (min-width:768px) and (max-width:1440px) {
     .menuwrapper {
-        display: flex;
-        flex-direction: column;
+        @include mixins.flex(column);
         width: 70%;
         margin: 0 auto;
     }
@@ -93,7 +91,7 @@
 
 @media screen and (min-width:1440px) {
     .menuwrapper {
-        flex-direction: row;
+        @include mixins.flex(row);
         justify-content: space-between;
         column-gap: 50px;
     }
@@ -112,7 +110,7 @@
             content: "";
             width: 35px;
             height: 5px;
-            background-color: rgb(153, 226, 208);
+            background-color: b.$color-tertiary;
             position: absolute;
             left: 0%;
             top: 45px;
@@ -121,8 +119,7 @@
     }
 
     &__list {
-        display: flex;
-        flex-direction: column;
+        @include mixins.flex(column);
         gap: 15px;
 
     }
@@ -166,18 +163,17 @@
 
 
     &__listElt {
-        display: flex;
+        @include mixins.flex(column);
         max-width: 98%;
         flex: 10;
-        flex-direction: column;
+        
         overflow: hidden;
         white-space: nowrap;
     }
 
 
     &__Elttext {
-        display: flex;
-        flex-direction: column;
+        @include mixins.flex(column);
         height: 60px;
     }
 

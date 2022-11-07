@@ -2,10 +2,17 @@
 @use '_animations.scss';
 
 $color-primary:rgb(147, 86, 220);
-$color-secondary: #fbc5eb;
+$color-secondary: rgb(255, 121, 218);
 $color-tertiary: rgb(153, 226, 208);
 $color-mix: linear-gradient(rgb(255, 121, 218), rgb(147, 86, 220));
+$color-mixhover:lighten (linear-gradient(rgb(255, 121, 218), rgb(147, 86, 220)),20%);
+$color-bgdark: lightgray;
+$color-bglight: #F2f2f2;
+$color-white : #fff;
+$color-black: #000;
 
+$font-head: "Shrikhand", "cursive";
+$font-body : "Roboto", "sans-serif";
 
 * {
     -moz-box-sizing: border-box;
@@ -14,23 +21,23 @@ $color-mix: linear-gradient(rgb(255, 121, 218), rgb(147, 86, 220));
 
 html,
 body {
-    font-family: "Roboto";
+    font-family: $font-body;
     margin: 0 auto;
     padding: 0;
     position: relative;
     max-width: 1440px;
     height: 100%;
-    background-color: #fff;
+    background-color: $color-white;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: $color-black;
 
 }
 
 h1 {
-    color: #000;
+    color: $color-black;
 }
 
 h2 {
@@ -46,21 +53,19 @@ h3 {
 .globalwrapper {
     max-width: 1440px;
     max-height: 100%;
-    background-color: white;
+    background-color: $color-white;
 }
 
 .footer {
-    @include mixins.flex;
-
-    flex-direction: column;
-    background-color: black;
+    @include mixins.flex(column);
+    background-color: $color-black;
     padding: 15px;
     margin: 0;
 
 
     &__logo {
-        color: white;
-        font-family: "Shrikhand", "cursive";
+        color: $color-white;
+        font-family: $font-head;
         font-size: 18px;
         padding-bottom: 15px;
     }
@@ -84,7 +89,7 @@ h3 {
     }
 
     &__link {
-        color: white;
+        color: b.$color-white;
         text-decoration: none;
     }
 }
@@ -92,8 +97,7 @@ h3 {
 @media screen and (min-width:768px) and (max-width:992px) {
     .footer {
         &__list {
-            display: flex;
-            flex-direction: row;
+            @include mixins.flex(row);
             padding-bottom: 5px;
             justify-content: space-around;
 
@@ -110,8 +114,7 @@ h3 {
         }
 
         &__list {
-            display: flex;
-            flex-direction: row;
+            @include mixins.flex(row);
             padding-bottom: 5px;
             justify-content: space-between;
             width: 85%;
